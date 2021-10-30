@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const withPhoto = gql`
+export const GET_SINGLE_PHOTO = gql`
   query getSinglePhoto($id: ID!) {
     photo(id: $id) {
       id
