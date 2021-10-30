@@ -1,23 +1,8 @@
 import React from 'react'
+import { useGetPhotos } from '../../hooks/useGetPhotos'
 import { PhotoCard } from '../PhotoCard'
-
-import { gql, useQuery } from '@apollo/client'
-
-const withPhotos = gql`
-  query getPhotos {
-    photos {
-      id
-      categoryId
-      src
-      likes
-      userId
-      liked
-    }
-  }
- `
-
-export const ListOfPhotoCards = () => {
-  const { loading, error, data: { photos = [] } = {} } = useQuery(withPhotos)
+export const ListOfPhotoCards = ({ categoryId }) => {
+  const { loading, error, data: { photos = [] } = {} } = useGetPhotos(categoryId)
 
   if (error) return <p>Error :(</p>
 

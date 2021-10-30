@@ -8,7 +8,7 @@ export const App = () => (
   <div>
     <Logo />
     <ListOfCategories />
-    <ListOfPhotoCards />
+    <ListOfPhotoCards categoryId={1} />
     <GlobalStyles />
   </div>
 )
